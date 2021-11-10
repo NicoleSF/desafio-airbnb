@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom';
 
 <form>
   <label>
-    Localização
     <input type="text" name="Localizacao" />
     <input type="text" value="check-in" />
     <input type="text" value="checkout" />
@@ -37,17 +36,38 @@ class NameForm extends React.Component<any, MyState> {
     this.setState({value: event.value});
   }
 
+  handleHospedes(event: any) {
+    this.setState({value: event.value});
+  }
+
   
   render() {
     return (
       <form >
         <label>
           Localização:
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
+          <input type="text" 
+          placeholder={"Para onde você vai?"}  
+          value={this.state.value} 
+          onChange={this.handleChange} />
+
           Check-in:
-          <input type="text" value={this.state.value} onChange={this.handleCheck} />
+          <input type="text" 
+          placeholder={"Quando?"} 
+          value={this.state.value} 
+          onChange={this.handleCheck} />
+
           Checkout:
-          <input type="text" value={this.state.value} onChange={this.handleCheckout} />
+          <input type="text" 
+          placeholder={"Quando?"}
+          value={this.state.value} 
+          onChange={this.handleCheckout} />
+          
+          Hóspedes:
+          <input type="text" 
+          placeholder={"Quantos?"}
+          value={this.state.value} 
+          onChange={this.handleHospedes} />
         </label>
         <input type="submit" value="Cadastro" />
       </form>
