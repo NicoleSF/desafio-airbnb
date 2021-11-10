@@ -1,6 +1,10 @@
 import React from 'react';
 import logoAirbnb from './logoAirbnb.png';
-import AppCss from './App.css';
+import styled from 'styled-components';
+
+const Butao = styled.button`
+  margin: 20px 20px;
+`;
 
 function App() {
   return (
@@ -11,9 +15,11 @@ function App() {
         <img src= {logoAirbnb} alt="imagem logo Airbnb"/>
       
       <div>
-        <input type="button" value="Localização" />
-        <input type="button" value="Check-in" />
-        <input type="button" value="Check-out" />
+        <input type="sub" value="Localização" />
+        <input type="sub" value="Check-in" />
+        <input type="sub" value="Check-out" />
+        <Butao type="button">Enviar</Butao>
+        
       </div>
     </>
    
