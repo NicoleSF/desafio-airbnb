@@ -12,7 +12,7 @@ function App() {
     <>
 
       
-        <img src= {logoAirbnb} alt="imagem logo Airbnb"/>
+        <img src= {logoAirbnb} alt="imagem logo Airbnb" className="img"/>
       
       <div>
         <input type="sub" value="Localização" />
