@@ -1,12 +1,17 @@
 import React from 'react';
 import { useState } from "react";
 import ReactDOM from 'react-dom';
+<<<<<<< HEAD
 import Cadastro from './Pages/Cadastro';
 import { Route, Link } from 'react-router-dom';
 
 
 
 <form>
+=======
+
+<form >
+>>>>>>> 4e934f9d3493c42e0f136021b376628eed2400cd
   <label>
     <input type="text" name="Localizacao" />
     <input type="text" value="check-in" />
@@ -40,13 +45,17 @@ class NameForm extends React.Component<any, MyState> {
     this.setState({value: event.value});
   }
 
+<<<<<<< HEAD
  
   
 
+=======
+>>>>>>> 4e934f9d3493c42e0f136021b376628eed2400cd
   handleHospedes(event: any) {
     this.setState({value: event.value});
   }
 
+<<<<<<< HEAD
   cadastrar = () => {
     <>
       <a href="Cadastro.tsx"></a>
@@ -59,6 +68,12 @@ class NameForm extends React.Component<any, MyState> {
     <>
       
       <form >
+=======
+  
+  render() {
+    return (
+      <form  className="busca">
+>>>>>>> 4e934f9d3493c42e0f136021b376628eed2400cd
         <label>
           Localização:
           <input type="text" 
@@ -77,13 +92,18 @@ class NameForm extends React.Component<any, MyState> {
           placeholder={"Quando?"}
           value={this.state.value} 
           onChange={this.handleCheckout} />
+<<<<<<< HEAD
           
+=======
+
+>>>>>>> 4e934f9d3493c42e0f136021b376628eed2400cd
           Hóspedes:
           <input type="text" 
           placeholder={"Quantos?"}
           value={this.state.value} 
           onChange={this.handleHospedes} />
         </label>
+<<<<<<< HEAD
         <button onClick={ this.cadastrar }>Cadastro</button>
       </form>
     </>  
@@ -94,3 +114,14 @@ class NameForm extends React.Component<any, MyState> {
 
 export default NameForm;
 
+=======
+        <button><img className="lupa" src="https://img.icons8.com/material-rounded/24/000000/search.png" alt="" /></button>
+      </form>
+    );
+  }
+}
+<input type="submit" value="Cadastro" />
+
+
+export default NameForm;
+>>>>>>> 4e934f9d3493c42e0f136021b376628eed2400cd
