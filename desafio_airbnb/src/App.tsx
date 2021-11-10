@@ -56,7 +56,6 @@ class NameForm extends React.Component<any, MyState> {
 
   render() {
     return (
-
     <>
       
       <form >
