@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from "react";
 import ReactDOM from 'react-dom';
 
-<form>
+<form >
   <label>
     <input type="text" name="Localizacao" />
     <input type="text" value="check-in" />
@@ -43,7 +43,7 @@ class NameForm extends React.Component<any, MyState> {
   
   render() {
     return (
-      <form >
+      <form  className="busca">
         <label>
           Localização:
           <input type="text" 
@@ -62,18 +62,19 @@ class NameForm extends React.Component<any, MyState> {
           placeholder={"Quando?"}
           value={this.state.value} 
           onChange={this.handleCheckout} />
-          
+
           Hóspedes:
           <input type="text" 
           placeholder={"Quantos?"}
           value={this.state.value} 
           onChange={this.handleHospedes} />
         </label>
-        <input type="submit" value="Cadastro" />
+        <button><img className="lupa" src="https://img.icons8.com/material-rounded/24/000000/search.png" alt="" /></button>
       </form>
     );
   }
 }
+<input type="submit" value="Cadastro" />
 
 
 export default NameForm;
