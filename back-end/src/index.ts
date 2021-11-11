@@ -1,10 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-// import { MongoClient, ObjectId } from 'mongodb';
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import {  connect, disconnect } from 'mongoose'
-// import { MongoClient, ObjectId } from 'mongodb';
-// import { Cadastro, CadastroModel} from './Cadastro';
-// import {  Schema, model, connect, disconnect } from 'mongoose'
+import { connect, disconnect } from 'mongoose';
+import { PessoaModel } from './mongo';
 
 const uri='mongodb+srv://ProjetoDB:Dbserver@cluster0.tqbkf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
