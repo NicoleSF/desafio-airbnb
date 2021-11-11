@@ -9,6 +9,8 @@ const conectCadastro = new MongoClient (uri);
 
 
 
+
+
 async function main() {
     try {
         //await connect(uri);
@@ -26,6 +28,10 @@ async function main() {
 
          const basededados = conectCadastro.db('Projetobd');
          const colecao = basededados.collection<Cadastro>('cadastros');*/
+        
+        console.log('Conectado ao MongoDb Atlas');
+
+   
     }
         catch (error) {
             console.log('Falha de acesso ao BD:');
@@ -34,6 +40,7 @@ async function main() {
         } finally {
             //await disconnect();
             await conectCadastro.close();
+        
         }
 }
 
