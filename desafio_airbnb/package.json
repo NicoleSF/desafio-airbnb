@@ -10,10 +10,7 @@
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
     "styled-components": "^5.3.3",
-<<<<<<< HEAD
-=======
     "typescript": "^4.4.4",
->>>>>>> 4e934f9d3493c42e0f136021b376628eed2400cd
     "web-vitals": "^1.1.2"
   },
   "scripts": {
