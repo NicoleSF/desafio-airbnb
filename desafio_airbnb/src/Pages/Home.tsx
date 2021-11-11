@@ -70,7 +70,6 @@ class NameForm extends React.Component<any, MyState> {
           onChange={this.handleHospedes} />
         </label>
         <button><img className="lupa" src="https://img.icons8.com/material-rounded/24/000000/search.png" alt="" /></button>
-        <Link to="/cadastro"><input type="submit" value="Cadastro" /></Link>
       </form>
     );
   }
