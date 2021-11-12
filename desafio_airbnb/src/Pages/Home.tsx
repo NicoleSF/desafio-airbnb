@@ -13,43 +13,54 @@ import styled from 'styled-components';
 </form>
 
 interface MyState {
-  value: string,
+  localizacao: string,
+  checkin: string,
+  checkout: string,
+  hospedes: string
 }
 
 class NameForm extends React.Component<any, MyState> {
   constructor(props: any) {
     super(props);
-    this.state = {value: ''};
+    this.state = {
+      localizacao: '',
+      checkin: '',
+      checkout: '',
+      hospedes: ''
+    };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleCheck = this.handleCheck.bind(this);
     this.handleCheckout = this.handleCheckout.bind(this);
+    this.handleHospedes = this.handleHospedes.bind(this);
   }
 
   handleChange(event: any) {
-    this.setState({value: event.value});
+    this.setState({localizacao: event.value});
   }
 
   handleCheck(event: any) {
-    this.setState({value: event.value});
+    this.setState({checkin: event.value});
   }
 
   handleCheckout(event: any) {
-    this.setState({value: event.value});
+    this.setState({checkout: event.value});
   }
 
   handleHospedes(event: any) {
-    this.setState({value: event.value});
+    console.log(event.target.value)
+    this.setState({hospedes: event.target.value});
   }
 
   
   render() {
     return (
-      <form  className="busca">
+      <form  className="busca" onChange={this.handleChange}  >
+         
         <label>
           Localização:
 
-          <select>                           
+          <select value={this.state.localizacao}>                           
             <option value="AC">Acre</option>
             <option value="AL">Alagoas</option>
             <option value="AP">Amapá</option>
@@ -79,28 +90,38 @@ class NameForm extends React.Component<any, MyState> {
             <option value="TO">Tocantins</option>
             <option value="EX">Estrangeiro</option>
           </select>
-        
-          
 
           Check-in:
           <input type="date"
           placeholder={"Quando?"} 
-          value={this.state.value} 
+          value={this.state.checkin} 
           onChange={this.handleCheck}/>
 
           Checkout:
           <input type="date" 
           placeholder={"Quando?"}
-          value={this.state.value} 
+          value={this.state.checkout} 
           onChange={this.handleCheckout} />
-          
-          Hóspedes:
-          <input type="text" 
-          placeholder={"Quantos?"}
-          value={this.state.value} 
-          onChange={this.handleHospedes} />
+
+            Hóspedes:
+              <select 
+                value={this.state.hospedes} 
+                onChange={this.handleHospedes}
+              >
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                </select>
+
         </label>
-        <button >
+
+        <button type="submit" >
           <img className="Lupa" src="https://img.icons8.com/material-rounded/24/000000/search.png" alt="" />
           </button>
       </form>
