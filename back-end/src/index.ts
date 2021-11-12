@@ -9,6 +9,10 @@ const conectCadastro = new MongoClient (uri);
 
 
 
+//const uri='mongodb+srv://ProjetoDB:Dbserver@cluster0.tqbkf.mongodb.net/ProjetoDB?retryWrites=true&w=majority';
+// const uri = 'mongodb+srv://projetoMongo:dbserver@cluster0.a1fww.mongodb.net/projetoMongo?retryWrites=true&w=majority';
+// const urilocal = 'mongodb://localhost:27017';
+//const conectCadastro = new MongoClient (uri);
 
 
 async function main() {

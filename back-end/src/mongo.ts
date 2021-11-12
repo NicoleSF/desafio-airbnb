@@ -1,4 +1,4 @@
-import { Schema, model } from 'mongoose'
+import { Schema, model } from 'mongoose';
 
 export interface Cadastro {
     nome: string;
@@ -18,3 +18,17 @@ export const CadastroSchema = new Schema<Cadastro>({
 });
 
 export const CadastroModel = model<Cadastro>('Cadastro', CadastroSchema, 'cadastros')
+
+export interface Hospedagem{
+    nome: string;
+    resumo: string;
+    caracteristica: string;
+}
+
+export const HospedagemSchema = new Schema<Hospedagem>({
+    nome: {type: String, required: true, minlength: 1, maxlength: 50},
+    resumo: {type: String, required: true, minlength: 10, maxlength: 300},
+    caracteristica: {type: String,  required: true, minlength: 10, maxlength: 300}
+});
+
+export const HospedagemModel = model<Hospedagem>('Hospedagem', HospedagemSchema, 'hospedagens');

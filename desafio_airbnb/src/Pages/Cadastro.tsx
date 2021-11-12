@@ -7,7 +7,7 @@ import Login from "./Login";
 export default function Cadastro(){
 
     return(
-        <form action="">
+        <form action="" method="post">
             <>
                 <h1>Faça seu Cadastro</h1>
                 <label>Nome:</label>
