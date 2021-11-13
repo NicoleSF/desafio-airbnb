@@ -121,9 +121,11 @@ class NameForm extends React.Component<any, MyState> {
 
         </label>
 
-        <button type="submit" >
-          <img className="Lupa" src="https://img.icons8.com/material-rounded/24/000000/search.png" alt="" />
+        <a href="http://localhost:3000/api/v1.0.0/">
+          <button type="submit" >
+            <img className="Lupa" src="https://img.icons8.com/material-rounded/24/000000/search.png" alt="" />
           </button>
+        </a>
       </form>
     );
   }

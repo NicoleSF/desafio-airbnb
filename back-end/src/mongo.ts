@@ -1,5 +1,18 @@
 import { Schema, model } from 'mongoose';
 
+export interface Login {
+    nome: string;
+    senha: string
+
+}
+
+export const LoginSchema = new Schema<Login>({
+    nome: {type: String, required: true, minlength: 1, maxlength: 50},
+    senha: {type: String, required: true, minlength: 7, maxlength: 8}
+});
+
+export const LoginModel = model<Login>('Login', LoginSchema, 'logins')
+
 export interface Cadastro {
     nome: string;
     email: string;

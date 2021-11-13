@@ -16,9 +16,6 @@ export default function Cadastro(){
                 <input type="email" className="email" placeholder="exemplo@exemplo.com"/>
                 <label>Telefone:</label>
                 <input type="phone" className="telefone" placeholder="xx-xxxxxxxx" />
-                <label>Endereço:</label>
-                <input type="text" className="endereco" placeholder="r. exemplo nº xx" />
-                <button> Entra </button>
                 <label>senha:</label>
                 <input type="text" className="senha" placeholder="Abcdsf01234" />
                 <Link to="/Login"><input type="submit" value="Enviar" /></Link>
