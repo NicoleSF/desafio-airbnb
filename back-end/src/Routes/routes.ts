@@ -1,6 +1,8 @@
 let express = require("express");
 let app = express();
 
+const CadastroController = require('../controller/UsuarioController')
+
 app.get('/', function(req: any, res: any){
     res.send('Bem vindo a api!'); 
 });
@@ -14,21 +16,9 @@ app.post('/home', function(req: any, res: any){
     }); 
 });
 
-app.post('/login', function(req: any, res: any){
-    res.send({
-        user: req.query.user,
-        passwd: req.query.passwd,
-    }); 
-});
+app.post('/cadastro', CadastroController.cadastro);
 
-app.post('/cadastro', function(req: any, res: any){
-    res.send({
-        name: req.query.name,
-        user: req.query.user,
-        telefone: req.query.telefone,
-        passwd: req.query.passwd,
-    }); 
-});
+app.post('/login', CadastroController.login);
 
 app.listen(8080);
 
