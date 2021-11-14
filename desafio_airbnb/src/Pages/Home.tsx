@@ -33,34 +33,55 @@ class NameForm extends React.Component<any, MyState> {
     this.handleCheck = this.handleCheck.bind(this);
     this.handleCheckout = this.handleCheckout.bind(this);
     this.handleHospedes = this.handleHospedes.bind(this);
+    this.sendFormBusca = this.sendFormBusca.bind(this);
+
   }
 
   handleChange(event: any) {
-    this.setState({localizacao: event.value});
+    this.setState({...this.state, localizacao: event.target.value});
   }
 
   handleCheck(event: any) {
-    this.setState({checkin: event.value});
+    this.setState({...this.state, checkin: event.target.value});
   }
 
   handleCheckout(event: any) {
-    this.setState({checkout: event.value});
+    this.setState({...this.state, checkout: event.target.value});
   }
 
   handleHospedes(event: any) {
-    console.log(event.target.value)
-    this.setState({hospedes: event.target.value});
+    this.setState({...this.state, hospedes: event.target.value});
   }
 
-  
+  sendFormBusca() { // função responsavel para enviar os dados ao mongo quando enviar
+    console.log(this.state);
+    
+    fetch(`http://localhost:8080/busca?localizacao=${this.state.localizacao}&checkin=${this.state.checkin}&checkout=${this.state.checkout}&hospedes=${this.state.hospedes}`,
+    { // nova função do chrome evita erro no cors
+        method: "POST",  
+        mode: 'no-cors'
+    })
+    .then(() => { // responsavel por limpa os dados depois de enviar eles
+        this.setState({ 
+            localizacao: '',
+            checkin: '',
+            checkout: '',
+            hospedes: ''
+        });
+    })
+    .catch(() => {
+
+    })
+}
+
   render() {
     return (
-      <form  className="busca" onChange={this.handleChange}  >
+      < >
          
         <label>
           Localização:
 
-          <select value={this.state.localizacao}>                           
+          <select onChange={this.handleChange} value={this.state.localizacao}>                           
             <option value="AC">Acre</option>
             <option value="AL">Alagoas</option>
             <option value="AP">Amapá</option>
@@ -121,12 +142,12 @@ class NameForm extends React.Component<any, MyState> {
 
         </label>
 
-        <a href="http://localhost:3000/api/v1.0.0/">
-          <button type="submit" >
+        
+          <button onClick={this.sendFormBusca} type="submit" >
             <img className="Lupa" src="https://img.icons8.com/material-rounded/24/000000/search.png" alt="" />
           </button>
-        </a>
-      </form>
+        
+      </>
     );
   }
 }

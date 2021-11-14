@@ -20,7 +20,10 @@ mongoose.connect('mongodb://projetoMongo:dbserver@cluster0-shard-00-00.a1fww.mon
 })
 
 app.set('port', 8080);
-app.use(cors());
+app.use(cors({
+    origin:'*', 
+    credentials:true
+}));
 app.use(express.json());
 app.use(routes); 
 export default app;

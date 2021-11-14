@@ -1,20 +1,24 @@
-// import { Schema, model } from 'mongoose';
-// const mongoose = require('mongoose')
+import { Schema, model } from 'mongoose';
+import internal from 'stream';
+const mongoose = require('mongoose')
 
-// export interface Cadastro {
-//     name: string;
-//     user: string;
-//     telefone: number;
-//     passwd: string
+export interface Home {
 
-// }
+    localizacao: string;
+    checkin: string;
+    checkout: string;
+    hospedes: string
+    
+}
 
-// export const CadastroSchema = new Schema<Cadastro>({
-//     name: {type: String, required: true, minlength: 1, maxlength: 50},
-//     user: {type: String, required: true, minlength: 1, maxlength: 50},
-//     telefone: {type: Number, required: true, min: 0, maxlength: 20},
-//     passwd: {type: String, required: true, minlength: 0, maxlength: 20}
-// });
+export const HomeSchema = new Schema<Home>({
+    localizacao: {type: String, required: true, minlength: 1, maxlength: 100},
+    checkin: {type: String, required: true},
+    checkout: {type: String, required: true},
+    hospedes: {type: String, required: true, minlength: 1, maxlength: 25 }
+    
+    
+});
 
-// export const CadastroModel = mongoose.model('Cadastro', CadastroSchema)
-// module.exports = CadastroModel
+export const HomeModel = mongoose.model('Home', HomeSchema);
+module.exports = HomeModel;
