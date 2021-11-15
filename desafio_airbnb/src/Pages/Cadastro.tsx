@@ -1,4 +1,5 @@
 // import { render } from '@testing-library/react';
+import { isRedirect } from 'node-fetch';
 import React from 'react';
 import { Link } from "react-router-dom";
 import Login from "./Login";
@@ -64,8 +65,9 @@ class CadastroForm extends React.Component<any, MyState> {
                 name: '',
                 user: '',
                 telefone: '',
-                passwd: ''
+                passwd: '',
             });
+            window.location.href="http://localhost:3000/login" // faz o redirecionamento
         })
         .catch(() => {
 

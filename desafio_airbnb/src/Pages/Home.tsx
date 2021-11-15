@@ -4,13 +4,113 @@ import ReactDOM from 'react-dom';
 import { Link } from "react-router-dom";
 import styled from 'styled-components';
 
-<form >
-  <label>
-    <input type="" name="Localizacao" />
-    <input type="text" value="check-in" />
-    <input type="text" value="checkout" />
-  </label>
-</form>
+const BoxInicial = styled.label`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  background-image: url("https://a.cdn-hotels.com/cos/heroimage/homepage/BRAZIL__189089055.jpg?impolicy=fcrop&w=1900&h=425&q=high");
+
+`;
+
+const TituloInicial =  styled.h1`
+  display: flex;
+  color: #d32f2f;
+  font-family: inherit;
+  border-style: solid ;
+`;
+
+const Label =  styled.label`
+  display: flex;
+`;
+
+const DivLocalizacao =  styled.div`
+  display: flex;
+  flex-direction: column;
+  
+`;
+
+const TituloLocalizacao =  styled.h2`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: #d32f2f;
+  font-family: inherit;
+  
+`;
+
+const LocalizacaoSelect =  styled.select`
+  text-size-adjust: inherit;
+  /* background: yellow; */
+  padding: 5px 25px;
+ 
+`;
+
+const DivCkeck =  styled.div`
+  display: flex;
+  flex-direction: column;
+  
+`;
+
+const TituloCkeck =  styled.h2`
+  display: flex;
+  color: #d32f2f;
+  font-family: inherit;
+  
+`;
+
+const DateCkeck =  styled.input`
+  padding: 2px 25px;
+  
+`;
+
+const DivCkeckout =  styled.div`
+  display: flex;
+  flex-direction: column;
+  
+`;
+
+const DateCkeckout =  styled.input`
+  padding: 2px 25px;
+  
+`;
+
+const TituloCkeckout =  styled.h2`
+  display: flex;
+  color: #d32f2f;
+  font-family: inherit;
+  
+`;
+
+const DivHospede =  styled.div`
+  display: flex;
+  flex-direction: column;
+  
+`;
+
+const TituloHospede =  styled.h2`
+  color: #d32f2f;
+  font-family: inherit;
+  
+`;
+
+const SelectHospede =  styled.select`
+  padding: 5px 35px;
+  
+`;
+
+const DivButtonBuscar =  styled.div`
+  padding: 1mm;
+  margin-top: 66px;
+  
+`;
+
+const ButtonBuscar =  styled.button`
+  padding: 0px 10px;
+  border-radius: 12px;
+  
+`;
 
 interface MyState {
   localizacao: string,
@@ -76,12 +176,12 @@ class NameForm extends React.Component<any, MyState> {
 
   render() {
     return (
-      < >
-         
-        <label>
-          Localização:
-
-          <select onChange={this.handleChange} value={this.state.localizacao}>                           
+      <BoxInicial>
+        <TituloInicial>Vai para Onde?</TituloInicial>
+        <Label>
+          <DivLocalizacao>
+          <TituloLocalizacao>Localização:</TituloLocalizacao>
+          <LocalizacaoSelect onChange={this.handleChange} value={this.state.localizacao}>                           
             <option value="AC">Acre</option>
             <option value="AL">Alagoas</option>
             <option value="AP">Amapá</option>
@@ -110,44 +210,50 @@ class NameForm extends React.Component<any, MyState> {
             <option value="SE">Sergipe</option>
             <option value="TO">Tocantins</option>
             <option value="EX">Estrangeiro</option>
-          </select>
+          </LocalizacaoSelect>
+          </DivLocalizacao>
 
-          Check-in:
-          <input type="date"
-          placeholder={"Quando?"} 
-          value={this.state.checkin} 
-          onChange={this.handleCheck}/>
+          <DivCkeck>
+            <TituloCkeck>Check-in:</TituloCkeck>
+            <DateCkeck type="date"
+            value={this.state.checkin}
+            onChange={this.handleCheck}/>
+          </DivCkeck>
 
-          Checkout:
-          <input type="date" 
-          placeholder={"Quando?"}
-          value={this.state.checkout} 
-          onChange={this.handleCheckout} />
+          <DivCkeckout>
+            <TituloCkeckout>Checkout:</TituloCkeckout>
+            <DateCkeckout type="date"
+            value={this.state.checkout}
+            onChange={this.handleCheckout} />
+          </DivCkeckout>
 
-            Hóspedes:
-              <select 
-                value={this.state.hospedes} 
-                onChange={this.handleHospedes}
-              >
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                </select>
+            <DivHospede>
+              <TituloHospede>Hóspedes:</TituloHospede>
+                <SelectHospede
+                  value={this.state.hospedes}
+                  onChange={this.handleHospedes}
+                >
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  </SelectHospede>
+            </DivHospede>
 
-        </label>
-
+            <DivButtonBuscar>
+              <ButtonBuscar onClick={this.sendFormBusca} type="submit" >
+                  <img className="Lupa" src="https://img.icons8.com/material-rounded/24/000000/search.png" alt="" />
+                </ButtonBuscar>
+            </DivButtonBuscar>
         
-          <button onClick={this.sendFormBusca} type="submit" >
-            <img className="Lupa" src="https://img.icons8.com/material-rounded/24/000000/search.png" alt="" />
-          </button>
-        
-      </>
+        </Label>
+
+      </BoxInicial>
     );
   }
 }

@@ -25,7 +25,7 @@ module.exports = {
         if(busca.length){
             res.json(busca)
         } else {
-            res.status(500).send('Pacote não encontrado!');
+            res.status(400).send('Pacote não encontrado!');
         }
     }
 }  

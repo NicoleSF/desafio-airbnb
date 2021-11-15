@@ -41,11 +41,12 @@ class LoginForm extends React.Component<any, MyState> {
             method: "POST",  
             mode: 'no-cors'
         })
-        .then(() => { // responsavel por limpa os dados depois de enviar eles
+        .then((res) => { // responsavel por limpa os dados depois de enviar eles
             this.setState({ 
                 user: '',
                 passwd: ''
             });
+            window.location.href="http://localhost:3000/home"
         })
         .catch(() => {
 
@@ -61,8 +62,7 @@ class LoginForm extends React.Component<any, MyState> {
 
             <label>Passwd:</label>
             <input value={this.state.passwd} onChange={this.handlePasswdLogin} type="text" className="passwd" placeholder="sua senha" />
-            <input onClick={this.sendFormLogin} type="submit" value="login" />
-
+            <input onClick={this.sendFormLogin} type="submit" value="login" /> 
             </>
         );
     }

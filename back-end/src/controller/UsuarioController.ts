@@ -24,7 +24,7 @@ module.exports = {
         if(usuario.length > 0){
             res.json(usuario)
         } else {
-            res.status(500).send('Usuário não encontrado!');
+            res.status(400).send('Usuário não encontrado!');
         }
     }
 }     
