@@ -22,7 +22,7 @@ const BoxInicial = styled.div`
 
 const TituloInicial =  styled.h1`
   display: flex;
-  color: #d32f2f;
+  color: black;
   font-family: inherit;
   /* border-style: solid ; */
   position: relative;
@@ -35,7 +35,7 @@ const Label =  styled.label`
   align-items: center;
   justify-content: center;
   margin: 68px;
-  background-color: #270570;
+  background-color: #1e90ff;
   padding: 10px 50px;
   margin-top: -35px;
   border: 1px solid black;
@@ -52,15 +52,17 @@ const TituloLocalizacao =  styled.h2`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  color: #d32f2f;
+  color: black;
   font-family: inherit;
 `;
 
 const LocalizacaoSelect =  styled.select`
   font-family: Arial, Helvetica, sans-serif ;
-  color: blue;
+  color: black;
   padding: 5px 25px;
   margin: -2px 8px 0px 0px;
+  border-radius: 10px;
+  border: 2px solid #000000;
  
 `;
 
@@ -72,7 +74,7 @@ const DivCkeck =  styled.div`
 
 const TituloCkeck =  styled.h2`
   display: flex;
-  color: #d32f2f;
+  color: black;
   font-family: inherit;
   
 `;
@@ -80,7 +82,9 @@ const TituloCkeck =  styled.h2`
 const DateCkeck =  styled.input`
   padding: 2px 25px;
   box-sizing: border-box;
-  color: blue;
+  color: black;
+  border-radius: 10px;
+  border: 2px solid #000000;
   
 `;
 
@@ -92,13 +96,15 @@ const DivCkeckout =  styled.div`
 
 const DateCkeckout =  styled.input`
   padding: 2px 25px;
-  color: blue;
+  color: black;
+  border-radius: 10px;
+  border: 2px solid #000000;
   
 `;
 
 const TituloCkeckout =  styled.h2`
   display: flex;
-  color: #d32f2f;
+  color: black;
   font-family: inherit;
   
 `;
@@ -110,7 +116,7 @@ const DivHospede =  styled.div`
 `;
 
 const TituloHospede =  styled.h2`
-  color: #d32f2f;
+  color: black;
   font-family: inherit;
   
 `;
@@ -118,7 +124,9 @@ const TituloHospede =  styled.h2`
 const SelectHospede =  styled.select`
   padding: 5px 35px;
   margin: 4px -1px 4px 7px;
-  color: blue;
+  color: black;
+  border-radius: 10px;
+  border: 2px solid #000000;
 `;
 
 const DivButtonBuscar =  styled.div`
@@ -130,6 +138,7 @@ const ButtonBuscar =  styled.button`
   padding: 0px 10px;
   border-radius: 12px;
   margin-top: 8px;
+  border: 2px solid #000000;
 `;
 
 const Hospedagens = styled.div`
