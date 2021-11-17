@@ -16,6 +16,8 @@ app.post('/home', HomeController.home);
 
 app.post('/busca', HomeController.homer);
 
+app.get('/busca', HomeController.endPoint);
+
 
 app.listen(8080);
 

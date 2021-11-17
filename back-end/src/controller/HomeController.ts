@@ -27,7 +27,17 @@ module.exports = {
         } else {
             res.status(400).send('Pacote não encontrado!');
         }
-    }
+    }, 
+
+    async endPoint(req:any, res: any) {
+        const busca = await HomeModel.find()
+        res.header("Access-Control-Allow-Origin", "*");
+        if(busca.length){
+            res.json(busca)
+        } else {
+            res.status(400).send('Pacote não encontrado!');
+        }
+    } 
 }  
 
 
