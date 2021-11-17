@@ -134,6 +134,12 @@ const DivButtonBuscar =  styled.div`
   margin-top: 66px;
 `;
 
+const BuscarHospedes =  styled.div`
+  padding: 1mm;
+  margin-top: 66px;
+  
+`;
+
 const ButtonBuscar =  styled.button`
   padding: 0px 10px;
   border-radius: 12px;
@@ -147,9 +153,24 @@ const ButtonBuscar =  styled.button`
     animation: 2s;
     background: #20B2AA;
   }
-
 `;
 
+const ButtonBuscarHospedes =  styled.button`
+  padding: 5px 10px;
+  border-radius: 12px;
+  margin-top: 8px;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 2px solid #000000;
+  
+  &:hover {
+    background: #afc0c5;;
+  }
+  &:active {
+    animation: 2s;
+    background: #20B2AA;
+  }
+`;
 
 const Hospedagens = styled.div`
   display: flex;
@@ -399,10 +420,15 @@ class NameForm extends React.Component<any, MyState> {
                     <img  src="https://img.icons8.com/material-rounded/24/000000/search.png" alt="" />
                   </ButtonBuscar>
               </DivButtonBuscar>
+              <BuscarHospedes>
+                <ButtonBuscarHospedes onClick={this.getDados} type="submit" >
+                    Buscar Hospedes
+                  </ButtonBuscarHospedes>
+              </BuscarHospedes>
           </Label>
           <Hospedagens>
                 <div>
-                  {this.state.lista.slice(0,1).map(function(item: any) {
+                  {this.state.lista.slice(11,12).map(function(item: any) {
                     return <BlocoUm>
                         <ImagemBlocoUM src="https://exp.cdn-hotels.com/hotels/1000000/930000/922200/922101/24896972_z.jpg?impolicy=fcrop&w=300&h=200&q=medium" />
                         <p>Casas/Hoteis</p>

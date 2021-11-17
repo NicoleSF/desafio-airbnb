@@ -3,8 +3,6 @@ import internal from 'stream';
 const mongoose = require('mongoose')
 
 export interface Home {
-
-    
     localizacao: string;
     checkin: string;
     checkout: string;
