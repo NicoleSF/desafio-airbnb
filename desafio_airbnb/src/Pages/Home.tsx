@@ -25,7 +25,6 @@ const TituloInicial =  styled.h1`
   display: flex;
   color: black;
   font-family: inherit;
-  /* border-style: solid ; */
   position: relative;
   margin-top: 564px;
   top: 28px;
@@ -143,7 +142,6 @@ const ButtonBuscar =  styled.button`
 
   &:hover {
     background: #afc0c5;
-    
   }
   &:active {
     animation: 2s;
