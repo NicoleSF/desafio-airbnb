@@ -1,5 +1,7 @@
+import userEvent from '@testing-library/user-event';
 import React from 'react';
-import { Link } from "react-router-dom";
+
+
 
 <form >
   <label>
@@ -49,20 +51,31 @@ class LoginForm extends React.Component<any, MyState> {
             window.location.href="http://localhost:3000/home"
         })
         .catch(() => {
-
+            ;
+            
+            
         })
     }
+
+    
   
     render() {
         return (
+            
             <>
-            <h1>Faça seu Login</h1>
-            <label>User:</label>
-            <input value={this.state.user} onChange={this.handleUserLogin} type="text" className="User" placeholder="exemplo@exemplo.com"/>
+            <div className="containerDiv">
+                
 
-            <label>Passwd:</label>
-            <input value={this.state.passwd} onChange={this.handlePasswdLogin} type="text" className="passwd" placeholder="sua senha" />
-            <input onClick={this.sendFormLogin} type="submit" value="login" /> 
+                <form className="containerForm">
+                    <h1 className="tituloForm">Realize seu Login</h1>
+                    
+                    <input value={this.state.user} onChange={this.handleUserLogin} type="text" className="inputForm" placeholder="email"/>
+
+                    
+                    <input value={this.state.passwd} onChange={this.handlePasswdLogin} type="text" className="inputForm" placeholder="senha" />
+                    <input onClick={this.sendFormLogin} className="inputBtn" type="submit" value="Login" /> 
+                </form>
+            </div>
             </>
         );
     }

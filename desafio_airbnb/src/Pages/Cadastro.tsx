@@ -1,7 +1,6 @@
 import { isRedirect } from 'node-fetch';
 import React from 'react';
-import { Link } from "react-router-dom";
-import Login from "./Login";
+
 
 
 <form >
@@ -75,18 +74,34 @@ class CadastroForm extends React.Component<any, MyState> {
   
     render() {
         return (
+            
             <>
-            <h1>Faça seu Cadastro</h1>
-            <label>Name:</label>
-            <input value={this.state.name} onChange={this.handleName} type="text" className="name" placeholder="Nome e Sobrenome"/>
-            <label>User:</label>
-            <input value={this.state.user} onChange={this.handleUser} type="text" className="user" placeholder="exemplo@exemplo.com"/>
-            <label>Telefone:</label>
-            <input value={this.state.telefone} onChange={this.handleTelefone} type="text" className="telefone" placeholder="xx-xxxxxxxx" />
-            <label>Passwd:</label>
-            <input value={this.state.passwd} onChange={this.handlePasswd} type="text" className="passwd" placeholder="Abcdsf01234" />
-            <input onClick={this.sendForm} type="submit" value="Enviar" />
+            <div className="containerDiv">
+                
+                    <form className="containerForm">
+                    <h1 className="tituloForm">Bem vindo(a) ao aluguel de casas!</h1>
+                    <h2 className="tituloForm">Realize seu Cadastro como Hóspede</h2>
+                            
+                            <input value={this.state.name} onChange={this.handleName} type="text" className="inputForm" placeholder="Nome e Sobrenome"/>
+                    
+                            
+                            <input value={this.state.user} onChange={this.handleUser} type="text" className="inputForm" placeholder="Email"/>
+                    
+                            
+                            <input value={this.state.telefone} onChange={this.handleTelefone} type="text" className="inputForm" placeholder="Telefone" />
+                    
+                            
+                            <input value={this.state.passwd} onChange={this.handlePasswd} type="text" className="inputForm" placeholder="Senha" />
+                    
+                            
+                            <input onClick={this.sendForm} className="inputBtn"type="submit" value="Enviar" /> 
+                    </form>
+                
+            </div>
             </>
+            
+
+            
         );
     }
 }

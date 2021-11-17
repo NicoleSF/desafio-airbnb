@@ -124,7 +124,6 @@ const SelectHospede =  styled.select`
 const DivButtonBuscar =  styled.div`
   padding: 1mm;
   margin-top: 66px;
-  
 `;
 
 const ButtonBuscar =  styled.button`
@@ -132,7 +131,6 @@ const ButtonBuscar =  styled.button`
   border-radius: 12px;
   margin-top: 8px;
 `;
-
 
 const Hospedagens = styled.div`
   display: flex;
@@ -277,11 +275,11 @@ class NameForm extends React.Component<any, MyState> {
 
   sendFormBusca(event: any) { // função responsavel para enviar os dados ao mongo quando enviar
     fetch(`http://localhost:8080/busca?localizacao=${this.state.localizacao}&checkin=${this.state.checkin}&checkout=${this.state.checkout}&hospedes=${this.state.hospedes}`,
-    { 
+    { // nova função do chrome evita erro no cors
         method: "POST",
         mode: 'cors'
     })
-    .then(() => { 
+    .then(() => { // responsavel por limpa os dados depois de enviar eles
         this.setState({ 
             ...this.state,
             localizacao: '',
@@ -382,7 +380,6 @@ class NameForm extends React.Component<any, MyState> {
                     <img  src="https://img.icons8.com/material-rounded/24/000000/search.png" alt="" />
                   </ButtonBuscar>
               </DivButtonBuscar>
-        
           </Label>
           <Hospedagens>
                 <div>

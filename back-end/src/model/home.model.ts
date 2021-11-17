@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 
 export interface Home {
 
+    
     localizacao: string;
     checkin: string;
     checkout: string;
@@ -12,6 +13,7 @@ export interface Home {
 }
 
 export const HomeSchema = new Schema<Home>({
+    
     localizacao: {type: String, required: true, minlength: 1, maxlength: 100},
     checkin: {type: String, required: true},
     checkout: {type: String, required: true},
