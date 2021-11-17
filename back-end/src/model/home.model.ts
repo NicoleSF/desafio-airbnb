@@ -18,8 +18,6 @@ export const HomeSchema = new Schema<Home>({
     checkin: {type: String, required: true},
     checkout: {type: String, required: true},
     hospedes: {type: String, required: true, minlength: 1, maxlength: 25 }
-    
-    
 });
 
 export const HomeModel = mongoose.model('Home', HomeSchema);
