@@ -77,9 +77,9 @@ class CadastroForm extends React.Component<any, MyState> {
             
             <>
             <div className="containerDiv">
-                
+                    <h1 className="tituloDiv">Bem vindo(a) ao aluguel de casas!</h1>
+
                     <form className="containerForm">
-                    <h1 className="tituloForm">Bem vindo(a) ao aluguel de casas!</h1>
                     <h2 className="tituloForm">Realize seu Cadastro como Hóspede</h2>
                             
                             <input value={this.state.name} onChange={this.handleName} type="text" className="inputForm" placeholder="Nome e Sobrenome"/>
