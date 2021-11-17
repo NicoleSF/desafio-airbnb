@@ -5,6 +5,7 @@ import Cadastro from "./Pages/Cadastro"
 import Login from "./Pages/Login";
 
 
+
 const Rout = () => {
    return(
         <BrowserRouter>
@@ -12,6 +13,7 @@ const Rout = () => {
                  <Route path="Home" element={<App />} />
                 <Route path="/" element={<Cadastro />} />
                 <Route path="login" element={<Login />} />
+                
            </Routes>
         </BrowserRouter>
    )

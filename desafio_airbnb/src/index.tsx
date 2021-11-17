@@ -6,12 +6,15 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Cadastro from './Pages/Cadastro';
 import App from './App';
 
+
+
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App/>}/>
         <Route path="/cadastro" element={<Cadastro/>}/>
+        
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
