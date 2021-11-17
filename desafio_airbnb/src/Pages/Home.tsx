@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import { Link } from "react-router-dom";
 import styled from 'styled-components';
 import { isRedirect } from 'node-fetch';
+import { act } from 'react-dom/test-utils';
 
 
 const Fundo = styled.div`
@@ -139,7 +140,18 @@ const ButtonBuscar =  styled.button`
   border-radius: 12px;
   margin-top: 8px;
   border: 2px solid #000000;
+
+  &:hover {
+    background: #afc0c5;
+    
+  }
+  &:active {
+    animation: 2s;
+    background: #20B2AA;
+  }
+
 `;
+
 
 const Hospedagens = styled.div`
   display: flex;
